@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Data Visualization Exercise 1</title>
+
+		<script src="d3.v3.min.js"></script>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700">
+		<style>
+			body {
+				background: url('background.jpg');
+				background-size: cover;
+				background-repeat: no-repeat;
+			}
+
+			h1 {
+				color: white;
+				font-family: 'Roboto', sans-serif;
+				font-weight: 300;
+				font-size: 20pt;
+			}
+
+			input[type=range] {
+				width: calc(100% - 20pt);
+				margin: 10pt;
+			}
+
+			#range-container {
+				width: calc(380px * 4 - 10px + 20pt);
+
+				border: 1pt dotted white;
+			}
+
+			#vis {
+				padding: 10pt;
+			}
+
+			#range-indicator {
+				font-weight: 400;
+			}
+		</style>
+	</head>
+	<body style="margin: 30px 30px">
+		<h1>Dota 2 strategies by employed by each skill level...</h1>
+
+		<div id="vis">
+			<svg></svg>
+		</div>
+
+		<h1>...during <span id="range-indicator">0% - 5%</span> of the game</h1>
+
+		<div id="range-container">
+			<input type="range" min="0" max="19" step="1" value="0">
+		</div>
+
+		<script src="data.js"></script>
+		<script src="heatmap.js"></script>
+	</body>
+</html>
